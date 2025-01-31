@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": { "title": "Mrs", "first": "Nina", "last": "Simmmons" },
+      "location": {
+        "street": { "number": 1155, "name": "Mcclellan Rd" },
+        "city": "Abilene",
+        "state": "Iowa",
+        "country": "United States",
+        "postcode": 60127,
+        "coordinates": { "latitude": "89.8759", "longitude": "47.6033" },
+        "timezone": {
+          "offset": "+8:00",
+          "description": "Beijing, Perth, Singapore, Hong Kong"
+        }
+      },
+      "email": "nina.simmmons@example.com",
+      "login": {
+        "uuid": "bd9d1704-86da-4da7-b4e8-e331707532f1",
+        "username": "lazywolf308",
+        "password": "thumper",
+        "salt": "A3P2OC0s",
+        "md5": "c3e0eeefd294e7cca12f931858d1b9b5",
+        "sha1": "73ede134a626b550cf68aabd23af286796b7bc71",
+        "sha256": "160b33190c246bb5f44da0fd150998df798e74fed797147ab67b915279658922"
+      },
+      "dob": { "date": "1956-12-13T09:50:33.855Z", "age": 68 },
+      "registered": { "date": "2004-09-10T04:18:17.956Z", "age": 20 },
+      "phone": "(243) 319-0911",
+      "cell": "(645) 352-4131",
+      "id": { "name": "SSN", "value": "283-99-5386" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/46.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/46.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/46.jpg"
+      },
+      "nat": "US"
+    }
+  ],
+  "info": {
+    "seed": "451cdf6e9da1c95f",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
