@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import "leaflet/dist/leaflet.css";
 import ReactDOM from "react-dom";
@@ -45,7 +45,7 @@ export default function WeatherButton({
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const fetchWeather = async () => {
+  const fetchWeather = useCallback(async () => {
     try {
       const response = await axios.get(
         "https://api.open-meteo.com/v1/forecast",
@@ -80,9 +80,9 @@ export default function WeatherButton({
         console.error("Error", response.data);
       }
     } catch (error) {
-      console.error("Error fatching data", error);
+      console.error("Error fetching data", error);
     }
-  };
+  }, [latitude, longitude]);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -92,7 +92,7 @@ export default function WeatherButton({
       interval = setInterval(fetchWeather, 30000);
     }
     return () => clearInterval(interval);
-  }, [isOpen]);
+  }, [isOpen, fetchWeather]);
 
   const getWeatherIcon = (weathercode: number) => {
     if (weathercode === 0) return <Sun className="w-16 h-16 text-yellow-500" />;

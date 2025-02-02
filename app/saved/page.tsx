@@ -10,7 +10,11 @@ import toast from "react-hot-toast";
 type User = {
   name: { first: string; last: string };
   email: string;
-  location: { city: string; country: string };
+  location: {
+    city: string;
+    country: string;
+    coordinates: { latitude: string; longitude: string };
+  };
   picture: { large: string };
 };
 
