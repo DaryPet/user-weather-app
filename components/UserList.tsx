@@ -42,8 +42,6 @@ export default function UserList() {
 
   const saveUser = (user: User) => {
     const savedUsers = JSON.parse(localStorage.getItem("savedUsers") || "[]");
-    // savedUsers.push(user);
-    // localStorage.setItem("savedUsers", JSON.stringify(savedUsers));
     if (!savedUsers.some((savedUser: User) => savedUser.email === user.email)) {
       localStorage.setItem("savedUsers", JSON.stringify([...savedUsers, user]));
       toast.success(`${user.name.first} saved!`, {
@@ -100,7 +98,6 @@ export default function UserList() {
                   width={200}
                   height={200}
                   className="w-24 h-24 rounded-full mx-auto border-4 border-cyan-700"
-                  layout="intrinsic"
                 />
                 <h2 className="text-xl font-semibold text-center text-cyan-700">
                   {user.name.first} {user.name.last}
