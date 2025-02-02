@@ -20,6 +20,15 @@ const DynamicLeafletMap = dynamic(() => import("@/components/LeafletMap"), {
   ssr: false,
 });
 
+type WeatherData = {
+  temperature: number;
+  minTemp: number | string;
+  maxTemp: number | string;
+  windspeed: number;
+  weathercode: number;
+  hourly: number[];
+};
+
 type WeatherProps = {
   latitude: number;
   longitude: number;
@@ -33,7 +42,7 @@ export default function WeatherButton({
   userImage,
   userName,
 }: WeatherProps) {
-  const [weather, setWeather] = useState<any>(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const fetchWeather = async () => {
